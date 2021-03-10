@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 
 public class FXMLController {
 	
-	Parole elenco = new Parole() ;
+	Parole elenco;
 
     @FXML
     private ResourceBundle resources;
