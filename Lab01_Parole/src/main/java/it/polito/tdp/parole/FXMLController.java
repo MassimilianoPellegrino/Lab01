@@ -12,7 +12,7 @@ import javafx.scene.control.TextField;
 
 public class FXMLController {
 	
-	Parole elenco ;
+	Parole elenco = new Parole() ;
 
     @FXML
     private ResourceBundle resources;
@@ -32,14 +32,28 @@ public class FXMLController {
     @FXML
     private Button btnReset;
 
+    
     @FXML
     void doInsert(ActionEvent event) {
     	// TODO
+    	String s = txtParola.getText();
+    	if(!s.matches(".*[0-9].*"))
+    		elenco.addParola(s);
+    	else {
+    		txtParola.clear();
+    		txtResult.setText("Attenzione, non inserire numeri");
+    		return;
+    	}
+    	txtResult.setText(elenco.toString());
+    	txtParola.clear();
+    	
     }
 
     @FXML
     void doReset(ActionEvent event) {
     	// TODO
+    	elenco.reset();
+    	txtResult.clear();
     }
 
     @FXML
