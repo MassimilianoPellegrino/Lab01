@@ -1,5 +1,6 @@
 package it.polito.tdp.parole.model;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -7,23 +8,25 @@ import java.util.List;
 
 public class Parole {
 	
-	private List<String> Parole;
+	private List<String> parole;
 	
 	public Parole() {
-		Parole = new LinkedList<String>();
+		parole = new ArrayList<String>();
+		//Parole = new LinkedList<String>();
 	}
 	
+	
 	public void addParola(String p) {
-		Parole.add(p);
+		parole.add(p);
 		//TODO
 	}
 	
 	public void removeParola(String p) {
-		Parole.remove(p);
+		parole.remove(p);
 	}
 	
 	public class ComparatoreParole implements Comparator<String>{
-
+	
 		@Override
 		public int compare(String o1, String o2) {
 			// TODO Auto-generated method stub
@@ -34,14 +37,14 @@ public class Parole {
 	
 	public List<String> getElenco() {
 		//TODO
-		Collections.sort(Parole, new ComparatoreParole());
+		Collections.sort(parole, new ComparatoreParole());
 	
-		return Parole;
+		return parole;
 	}
 	
 	public void reset() {
 		// TODO
-		Parole.clear();
+		parole.clear();
 	}
 	
 
