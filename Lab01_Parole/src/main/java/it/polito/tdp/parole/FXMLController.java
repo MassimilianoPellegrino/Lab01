@@ -18,6 +18,9 @@ public class FXMLController {
     private ResourceBundle resources;
 
     @FXML
+    private TextArea txtTempi;
+    
+    @FXML
     private URL location;
 
     @FXML
@@ -42,11 +45,12 @@ public class FXMLController {
     	else {
     		txtParola.clear();
     		txtResult.setText("Attenzione, non inserire numeri");
+    		txtTempi.appendText(String.valueOf(System.nanoTime())+"\n");
     		return;
     	}
     	txtResult.setText(elenco.toString());
     	txtParola.clear();
-    	
+    	txtTempi.appendText(String.valueOf(System.nanoTime())+"\n");
     }
 
     @FXML
@@ -54,6 +58,7 @@ public class FXMLController {
     	// TODO
     	elenco.reset();
     	txtResult.clear();
+    	txtTempi.appendText(String.valueOf(System.nanoTime())+"\n");
     }
     
     @FXML
@@ -62,9 +67,8 @@ public class FXMLController {
     	if(elenco.getElenco().contains(s)) {
     		elenco.removeParola(s);
     		txtResult.setText(elenco.toString());
-    	}
-    		
-    	
+    	}	
+    	txtTempi.appendText(String.valueOf(System.nanoTime())+"\n");
     }
 
 
