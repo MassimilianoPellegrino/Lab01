@@ -18,6 +18,10 @@ public class Parole {
 		//TODO
 	}
 	
+	public void removeParola(String p) {
+		Parole.remove(p);
+	}
+	
 	public class ComparatoreParole implements Comparator<String>{
 
 		@Override
@@ -39,6 +43,7 @@ public class Parole {
 		// TODO
 		Parole.clear();
 	}
+	
 
 	@Override
 	public String toString() {

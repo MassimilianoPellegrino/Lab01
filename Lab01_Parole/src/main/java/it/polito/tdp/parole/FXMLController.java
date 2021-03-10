@@ -55,6 +55,18 @@ public class FXMLController {
     	elenco.reset();
     	txtResult.clear();
     }
+    
+    @FXML
+    void doCancella(ActionEvent event) {
+    	String s = txtResult.getSelectedText();
+    	if(elenco.getElenco().contains(s)) {
+    		elenco.removeParola(s);
+    		txtResult.setText(elenco.toString());
+    	}
+    		
+    	
+    }
+
 
     @FXML
     void initialize() {
